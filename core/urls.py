@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from app.views import *
 
 urlpatterns = [
@@ -25,3 +25,5 @@ urlpatterns = [
     path('predict/<str:ticker_value>/<str:number_of_days>/', predict),
     path('ticker/', ticker),
 ]
+
+urlpatterns += staticfiles_urlpatterns()
